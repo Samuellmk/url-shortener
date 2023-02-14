@@ -14,8 +14,12 @@ export class UrlService {
     const link = process.env.BASE_URL + randomString;
 
     try {
-      const URL = await this.prisma.url.create({
-        data: {
+      const URL = await this.prisma.url.upsert({
+        where: {
+          url: dto.url,
+        },
+        update: {},
+        create: {
           url: dto.url,
           shortUrl: link,
         },
