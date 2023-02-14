@@ -1,14 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
-import UrlSearch from './urlSearch';
+import MainLayout from 'src/layout/mainLayout';
 
 export function App() {
-  return (
-    <div className="h-screen flex justify-center items-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-      <UrlSearch />
-      <div />
-    </div>
-  );
+  return <MainLayout />;
 }
 
 export default App;
