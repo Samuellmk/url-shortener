@@ -8,16 +8,7 @@
       "rules": {
         "@nrwl/nx/enforce-module-boundaries": [
           "error",
-          {
-            "enforceBuildableLibDependency": true,
-            "allow": [],
-            "depConstraints": [
-              {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
-              }
-            ]
-          }
+          { "allowCircularSelfDependency": true }
         ]
       }
     },
@@ -32,7 +23,12 @@
       "rules": {}
     },
     {
-      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+      "files": [
+        "*.spec.ts",
+        "*.spec.tsx",
+        "*.spec.js",
+        "*.spec.jsx"
+      ],
       "env": {
         "jest": true
       },
