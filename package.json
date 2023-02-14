@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "prisma:dev:deploy": "cd api && prisma migrate deploy",
+    "db:dev:rm": "docker compose rm dev-db -s -f -v",
+    "db:dev:up": "docker compose up dev-db -d",
+    "db:dev:restart": "npm run db:dev:rm && npm run db:dev:up && timeout 5 && npm run prisma:dev:deploy",
     "start:client": "nx run client:serve",
     "start:api": "nx run api:serve",
     "build": "nx build",
@@ -62,6 +66,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
+    "@nestjs/config": "^2.3.1",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
     "@prisma/client": "^4.10.1",
