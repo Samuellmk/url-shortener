@@ -1,4 +1,8 @@
-export interface UrlDto {
-    url: string;
-    shortenUrl: string;
+import { IsNotEmpty, IsString } from "class-validator"
+
+
+export class UrlDto {
+    @IsString()
+    @IsNotEmpty()
+    url!: string;
 }
