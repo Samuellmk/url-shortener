@@ -1,15 +1,40 @@
 import { useState } from 'react';
 import { postUrl } from 'src/api/url';
 import { UrlInterface } from 'src/interfaces';
+import ErrorAlert from './errorAlert';
 import { ShortUrlPopup } from './shortUrlPopup';
 
 const UrlSearch = (props: UrlInterface) => {
   const [url, setUrl] = useState('');
   const [shortUrl, setShortUrl] = useState('');
+  const [showError, setError] = useState(false);
 
   const handleButton = async () => {
+    if (!validateUrl()) {
+      console.log('Error');
+      setError(true);
+      setTimeout(() => setError(false), 3000);
+      return;
+    }
+
     const { shortUrl } = await postUrl(url);
     setShortUrl(shortUrl);
+  };
+
+  const validateUrl = () => {
+    const exp =
+      // eslint-disable-next-line no-useless-escape
+      /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
+    const protoExp = new RegExp(exp);
+
+    if (url.match(import.meta.env.VITE_FRONTEND_URL))
+      return false;
+
+    if (url.match(protoExp)) {
+      return true;
+    }
+
+    return false;
   };
 
   const onUrlChange = (
@@ -27,7 +52,7 @@ const UrlSearch = (props: UrlInterface) => {
       <h1 className="display-3 text-white font-semibold">
         URL Shortener
       </h1>
-      <div className="card ">
+      <div className="card transition-transform ease-in-out duration-500">
         <div className="card-body">
           <div className="">
             <div className="flex gap-7 ">
@@ -49,10 +74,15 @@ const UrlSearch = (props: UrlInterface) => {
           </div>
         </div>
       </div>
-      <ShortUrlPopup
-        shortUrl={shortUrl}
-        showCopiedText={showCopiedText}
-      />
+
+      {showError && <ErrorAlert />}
+
+      {shortUrl && (
+        <ShortUrlPopup
+          shortUrl={shortUrl}
+          showCopiedText={showCopiedText}
+        />
+      )}
     </div>
   );
 };
