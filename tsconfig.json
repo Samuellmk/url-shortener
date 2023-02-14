@@ -18,6 +18,7 @@
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "strictNullChecks": false,
     "types": ["vite/client", "vitest"]
   },
   "files": [],
