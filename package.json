@@ -15,6 +15,8 @@
     "@nrwl/react": "15.6.3",
     "@nrwl/vite": "15.6.3",
     "@nrwl/workspace": "15.6.3",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.9",
     "@testing-library/react": "13.4.0",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
@@ -24,6 +26,7 @@
     "@vitejs/plugin-react": "^3.0.0",
     "@vitest/coverage-c8": "~0.25.8",
     "@vitest/ui": "^0.25.8",
+    "autoprefixer": "10.4.13",
     "cypress": "^12.2.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
@@ -34,8 +37,10 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "jsdom": "~20.0.3",
     "nx": "15.6.3",
+    "postcss": "8.4.19",
     "prettier": "^2.6.2",
     "react-test-renderer": "18.2.0",
+    "tailwindcss": "3.2.4",
     "typescript": "~4.8.2",
     "vite": "^4.0.1",
     "vite-plugin-eslint": "^1.8.1",
@@ -44,6 +49,7 @@
   },
   "dependencies": {
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "versoly-ui": "^2.0.1"
   }
 }
