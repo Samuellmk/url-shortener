@@ -1,5 +1,5 @@
 {
-  "name": "url-shortener",
+  "name": "client",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "./src",
   "projectType": "application",
@@ -9,7 +9,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/url-shortener"
+        "outputPath": "dist/client"
       },
       "configurations": {
         "development": {
@@ -24,15 +24,16 @@
       "executor": "@nrwl/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "url-shortener:build"
+        "buildTarget": "client:build",
+        "proxyConfig": "./proxy.conf.json"
       },
       "configurations": {
         "development": {
-          "buildTarget": "url-shortener:build:development",
+          "buildTarget": "client:build:development",
           "hmr": true
         },
         "production": {
-          "buildTarget": "url-shortener:build:production",
+          "buildTarget": "client:build:production",
           "hmr": false
         }
       }
@@ -41,23 +42,23 @@
       "executor": "@nrwl/vite:preview-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "url-shortener:build"
+        "buildTarget": "client:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "url-shortener:build:development"
+          "buildTarget": "client:build:development"
         },
         "production": {
-          "buildTarget": "url-shortener:build:production"
+          "buildTarget": "client:build:production"
         }
       }
     },
     "test": {
       "executor": "@nrwl/vite:test",
-      "outputs": ["coverage/url-shortener"],
+      "outputs": ["coverage/client"],
       "options": {
         "passWithNoTests": true,
-        "reportsDirectory": "coverage/url-shortener"
+        "reportsDirectory": "coverage/client"
       }
     },
     "lint": {
