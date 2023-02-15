@@ -2,11 +2,11 @@ import { FaCopy } from 'react-icons/fa';
 import { ShortUrlInterface } from 'src/interfaces';
 
 export const ShortUrlPopup = (props: ShortUrlInterface) => {
-  const shortUrl = 'http://' + props.shortUrl;
+  const shortUrl =
+    import.meta.env.VITE_FULL_FRONTEND_URL + props.shortUrl;
 
   const onCopyClick = () => {
     navigator.clipboard.writeText(shortUrl);
-    console.log(typeof props.showCopiedText);
     props.showCopiedText(true);
   };
 
