@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 
 type Props = {
@@ -11,7 +10,7 @@ export const CopiedAlert = (props: Props) => {
       className={`${
         props.isVisible
           ? 'translate-y-0 '
-          : '-translate-y-full -top-3'
+          : '-translate-y-full -top-5'
       } ease-in-out duration-500
         rounded-md 
         top-3 bg-white shadow-md px-5 py-3 fixed w-fit z-40 `}
