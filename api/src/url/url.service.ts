@@ -1,6 +1,7 @@
 import {
   ForbiddenException,
   Injectable,
+  NotFoundException,
 } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { UrlDto } from './dto';
@@ -12,13 +13,23 @@ export class UrlService {
   constructor(private prisma: PrismaService) {}
 
   async findShort(dto: string) {
-    const res = await this.prisma.url.findUnique({
-      where: {
-        shortUrl: dto,
-      },
-    });
-
-    return { url: res.url };
+    try {
+      const res = await this.prisma.url.findFirstOrThrow({
+        where: {
+          shortUrl: dto,
+        },
+      });
+      return { url: res.url };
+    } catch (error) {
+      if (
+        error instanceof
+        Prisma.PrismaClientKnownRequestError
+      ) {
+        if (error.code === 'P2025')
+          throw new NotFoundException();
+      }
+      throw error;
+    }
   }
 
   async shorten(dto: UrlDto) {
