@@ -1,4 +1,5 @@
 import { FaCopy } from 'react-icons/fa';
+import { IconContext } from 'react-icons/lib';
 import { ShortUrlInterface } from 'src/interfaces';
 
 export const ShortUrlPopup = (props: ShortUrlInterface) => {
@@ -21,10 +22,14 @@ export const ShortUrlPopup = (props: ShortUrlInterface) => {
           >
             {shortUrl}
           </a>
-          <FaCopy
-            onClick={onCopyClick}
-            className="text-slate-600 cursor-pointer"
-          />
+          <IconContext.Provider value={{ size: '16' }}>
+            <div>
+              <FaCopy
+                onClick={onCopyClick}
+                className="text-slate-600 cursor-pointer"
+              />
+            </div>
+          </IconContext.Provider>
         </div>
       </div>
     </div>
