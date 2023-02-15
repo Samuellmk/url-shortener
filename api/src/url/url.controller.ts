@@ -4,7 +4,7 @@ import {
   Get,
   Post,
 } from '@nestjs/common';
-import { Query, Redirect } from '@nestjs/common/decorators';
+import { Query } from '@nestjs/common/decorators';
 import { UrlDto } from './dto';
 import { UrlService } from './url.service';
 
