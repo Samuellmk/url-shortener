@@ -111,8 +111,6 @@ This is an example of how to list things you need to use the software and how to
 
 8. Run `npm run start:api` for backend server on another terminal. Use http://localhost:3333/api/ for API calls
 
-> :warning: **If you have prisma generate error**:
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
