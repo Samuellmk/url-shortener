@@ -19,7 +19,7 @@ export class UrlService {
           shortUrl: dto,
         },
       });
-      return { url: res.url };
+      return { url: res.url, statusCode: 301 };
     } catch (error) {
       if (
         error instanceof

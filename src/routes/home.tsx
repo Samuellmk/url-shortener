@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { CopiedAlert } from 'src/components/copiedAlert';
 import UrlSearch from '../components/urlSearch';
 
-const MainLayout = () => {
+const Home = () => {
   const [showCopiedText, setCopiedText] = useState(false);
 
   const toggleCopiedText = () => {
@@ -19,4 +19,4 @@ const MainLayout = () => {
   );
 };
 
-export default MainLayout;
+export default Home;

@@ -13,6 +13,7 @@ const UrlSearch = (props: UrlInterface) => {
     if (!validateUrl()) {
       console.log('Error');
       setError(true);
+      setShortUrl('');
       setTimeout(() => setError(false), 3000);
       return;
     }

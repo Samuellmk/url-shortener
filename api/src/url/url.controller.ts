@@ -13,11 +13,7 @@ export class UrlController {
   constructor(private UrlService: UrlService) {}
 
   @Get('fullUrl')
-  @Redirect()
   getUrl(@Query('shortenUrl') shortenUrl: string) {
-    // if(this.UrlService.findShort(id)) {
-    //   return { url: this.configService.get('BASE_URL')}
-    // }
     return this.UrlService.findShort(shortenUrl);
   }
 

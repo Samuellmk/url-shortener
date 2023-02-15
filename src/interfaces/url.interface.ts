@@ -5,3 +5,7 @@ export class UrlInterface {
 export class ShortUrlInterface extends UrlInterface {
   shortUrl: string;
 }
+
+export class NormalUrlInterface {
+  url: string;
+}
