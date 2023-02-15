@@ -10,8 +10,8 @@
     "start:client": "nx run client:serve",
     "start:api": "nx run api:serve",
     "start:api:prod": "npm run generate && node dist/api/main.js",
-    "build:client": "nx build client",
     "generate": "cd api && npx prisma generate",
+    "build:client": "nx build client",
     "build:api": "nx build api",
     "test": "nx test"
   },
