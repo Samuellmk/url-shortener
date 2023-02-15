@@ -6,7 +6,7 @@ import {
 import { PrismaService } from '../prisma/prisma.service';
 import { UrlDto } from './dto';
 import { randomBytes } from 'crypto';
-import { Prisma } from '@prisma/client';
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime';
 
 @Injectable()
 export class UrlService {
@@ -21,10 +21,7 @@ export class UrlService {
       });
       return { url: res.url, statusCode: 301 };
     } catch (error) {
-      if (
-        error instanceof
-        Prisma.PrismaClientKnownRequestError
-      ) {
+      if (error instanceof PrismaClientKnownRequestError) {
         if (error.code === 'P2025')
           throw new NotFoundException();
       }
@@ -53,10 +50,7 @@ export class UrlService {
       });
       return URL;
     } catch (error) {
-      if (
-        error instanceof
-        Prisma.PrismaClientKnownRequestError
-      ) {
+      if (error instanceof PrismaClientKnownRequestError) {
         if (error.code === 'P2002') {
           throw new ForbiddenException('URL exists');
         }
