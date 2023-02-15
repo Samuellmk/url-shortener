@@ -1,6 +1,8 @@
 {
   "version": 2,
-  "name": "music-album",
-  "builds": [{ "src": "app.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "/app.js" }]
+  "name": "api",
+  "builds": [
+    { "src": "dist/api/main.js", "use": "@vercel/node" }
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "dist/api/main.js" }]
 }
