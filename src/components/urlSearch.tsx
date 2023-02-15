@@ -6,6 +6,7 @@ import { ShortUrlPopup } from './shortUrlPopup';
 
 const UrlSearch = (props: UrlInterface) => {
   const [url, setUrl] = useState('');
+  const [loading, setLoading] = useState(false);
   const [shortUrl, setShortUrl] = useState('');
   const [showError, setError] = useState(false);
 
@@ -17,8 +18,9 @@ const UrlSearch = (props: UrlInterface) => {
       setTimeout(() => setError(false), 3000);
       return;
     }
-
+    setLoading(true);
     const { shortUrl } = await postUrl(url);
+    setLoading(false);
     setShortUrl(shortUrl);
   };
 
@@ -66,10 +68,34 @@ const UrlSearch = (props: UrlInterface) => {
                 placeholder="Paste your URL here"
               />
               <button
-                className="btn bg-slate-800 text-gray-50"
+                className="btn w-24 bg-slate-800 text-gray-50"
                 onClick={handleButton}
+                disabled={loading}
               >
-                Shorten!
+                {loading ? (
+                  <svg
+                    className="w-5 h-5 text-white animate-spin"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      stroke-width="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
+                  </svg>
+                ) : (
+                  `Shorten!`
+                )}
               </button>
             </div>
           </div>
