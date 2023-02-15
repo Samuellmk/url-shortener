@@ -2,9 +2,9 @@ import {
   Body,
   Controller,
   Get,
-  Param,
   Post,
 } from '@nestjs/common';
+import { Query, Redirect } from '@nestjs/common/decorators';
 import { UrlDto } from './dto';
 import { UrlService } from './url.service';
 
@@ -12,9 +12,13 @@ import { UrlService } from './url.service';
 export class UrlController {
   constructor(private UrlService: UrlService) {}
 
-  @Get(':id')
-  getUrl(@Param('id') id: string) {
-    return this.UrlService.findShort(id);
+  @Get('fullUrl')
+  @Redirect()
+  getUrl(@Query('shortenUrl') shortenUrl: string) {
+    // if(this.UrlService.findShort(id)) {
+    //   return { url: this.configService.get('BASE_URL')}
+    // }
+    return this.UrlService.findShort(shortenUrl);
   }
 
   @Post('shorten')
