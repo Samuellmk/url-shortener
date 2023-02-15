@@ -11,7 +11,7 @@
     "start:api": "nx run api:serve",
     "start:api:prod": "npm run generate && node dist/api/main.js",
     "build:client": "nx build client",
-    "generate": "npx prisma generate --schema=./api/prisma/schema.prisma",
+    "generate": "cd api && npx prisma generate",
     "build:api": "nx build api",
     "test": "nx test"
   },
