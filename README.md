@@ -91,7 +91,7 @@ This is an example of how to list things you need to use the software and how to
    ```
 3. Create `.env` in root directory
 
-   ```json
+   ```js
    VITE_BACKEND_URL = "http://localhost:3333/api/"
    VITE_FRONTEND_URL= "localhost:4200"
    VITE_FULL_FRONTEND_URL= "http://localhost:4200/"
@@ -99,7 +99,7 @@ This is an example of how to list things you need to use the software and how to
 
 4. Create another `.env` in `/api` directory
 
-   ```json
+   ```js
    DATABASE_URL="postgresql://postgres:123@localhost:5434/nest?schema=public"
    ```
 
