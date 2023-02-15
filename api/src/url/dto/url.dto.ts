@@ -1,8 +1,7 @@
-import { IsNotEmpty, IsString } from "class-validator"
-
+import { IsNotEmpty, IsString } from 'class-validator';
 
 export class UrlDto {
-    @IsString()
-    @IsNotEmpty()
-    url!: string;
+  @IsString()
+  @IsNotEmpty()
+  url: string;
 }
