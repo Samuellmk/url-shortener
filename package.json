@@ -9,7 +9,8 @@
     "db:dev:restart": "npm run db:dev:rm && npm run db:dev:up && timeout 5 && npm run prisma:dev:deploy",
     "start:client": "nx run client:serve",
     "start:api": "nx run api:serve",
-    "build": "nx build",
+    "build:client": "nx build client",
+    "build:api": "nx build api",
     "test": "nx test"
   },
   "private": true,
