@@ -9,8 +9,7 @@ export async function getUrl(shortenUrl: string) {
       shortenUrl,
     },
     headers: {
-      'Access-Control-Allow-Origin':
-        'http://localhost:4200',
+      'Access-Control-Allow-Origin': '*',
     },
   });
   return res.data as NormalUrlInterface;
@@ -19,6 +18,14 @@ export async function getUrl(shortenUrl: string) {
 export async function postUrl(url: string) {
   const apiUrl =
     import.meta.env.VITE_BACKEND_URL + 'shorten';
-  const res = await axios.post(apiUrl, { url: url });
+  const res = await axios.post(
+    apiUrl,
+    { url: url },
+    {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
+    }
+  );
   return res.data;
 }
