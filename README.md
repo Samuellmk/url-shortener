@@ -22,7 +22,9 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#techstack">Tech Stack</a></li>
+        <li><a href="#hostedon">Hosted On</a></li>
+        <li><a href="#assumptions">Assumptions</a></li>
       </ul>
     </li>
     <li>
@@ -49,13 +51,20 @@
 
 A full stack web application - a simple url shortener, **however, a short memorable domain is needed for this to be in full effect.**
 
+### Assumptions
+
+1. Short memorable domain name is expensive, hence using the default URL as a placeholder for "shorten" URL.
+2. Due to CORS policy, retrieved normal URL back from backend and redirect in frontend, instead of redirect immediately from the GET API call.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built With
+### TechStack
 
 - [![React][React.js]][React-url]
 - [![Nest][Nest.js]][Nest-url]
 - [![Postgresql][Postgresql]][Postgresql-url]
+
+![Tech Stack][techstack]
 
 ### Hosted on
 
@@ -70,9 +79,6 @@ A full stack web application - a simple url shortener, **however, a short memora
 ## Getting Started
 
 ### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-
 - npm
   ```sh
   npm install npm@latest -g
@@ -184,8 +190,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [issues-url]: https://github.com/othneildrew/Best-README-Template/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
+[techstack]:https://i.ibb.co/QFHpdMP/Govtech-arch-drawio-1.png
 [product-screenshot]: https://i.ibb.co/CHQyR9y/url-shortener.png
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
