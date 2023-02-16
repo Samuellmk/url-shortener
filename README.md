@@ -139,6 +139,7 @@ A full stack web application - a simple url shortener, **however, a short memora
 - [x] Frontend
 - [x] Backend
 - [x] Hosted
+- [ ] Change backend service for better speed
 
 See the [open issues](https://github.com/Samuellmk/url-shortener/issues) for a full list of proposed features (and known issues).
 
