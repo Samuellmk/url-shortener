@@ -69,7 +69,7 @@ A full stack web application - a simple url shortener, **however, a short memora
 ### Hosted on
 
 - [![Vercel][Vercel]][Vercel-url]
-- [![Railway][Railway]][Railway-url]
+- [![GoogleCloud][GoogleCloud]][GoogleCloud-url]
 - [![Supabase][Supabase]][Supabase-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -201,7 +201,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [Postgresql-url]: https://www.postgresql.org/
 [Vercel]: https://img.shields.io/badge/Vercel-20232A?style=for-the-badge&logo=Vercel&logoColor=00000
 [Vercel-url]: https://www.vercel.com/
-[Railway]: https://img.shields.io/badge/Railway-20232A?style=for-the-badge&logo=Railway&logoColor=00000
-[Railway-url]: https://railway.app/
+[GoogleCloud]: https://img.shields.io/badge/gcloud-20232A?style=for-the-badge&logo=GoogleCloud&logoColor=00000
+[GoogleCloud-url]: https://cloud.google.com/
 [Supabase]: https://img.shields.io/badge/supabase-20232A?style=for-the-badge&logo=supabase&logoColor=00000
 [Supabase-url]: https://supabase.com/
